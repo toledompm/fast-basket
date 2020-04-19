@@ -3,6 +3,7 @@ import StoreList from '../Store/list'
 import {connect} from 'react-redux';
 import {fetchStores} from '../../actions/index';
 import {testData} from '../../reducers/storeReducer';
+import {Link} from 'react-router-dom';
 class Dashboard extends Component {
     componentDidMount() {
         this
@@ -17,6 +18,10 @@ class Dashboard extends Component {
                     <p>Cadastre seus produtos online e compartilhe sua lojas nas redes sociais</p>
                 </div>
                 <StoreList stores={testData}/>
+                <Link to='/store/create'>
+                    <button className="green"><i className="add icon"/>
+                    </button>
+                </Link>
             </div>
         )
     }
