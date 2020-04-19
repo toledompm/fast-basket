@@ -9,10 +9,11 @@ import Header from './components/Header';
 import Store from './components/Store';
 import StoreCreate from './components/Store/create';
 import StoreEdit from './components/Store/edit';
-import Product from './components/Product';
 import ProductCreate from './components/Product/create';
 import ProductEdit from './components/Product/edit';
 import Catalog from './components/Catalog';
+import CatalogEdit from './components/Catalog/edit';
+import CatalogCart from './components/Catalog/cart';
 
 import history from './history';
 import Help from './components/Help';
@@ -44,8 +45,9 @@ class Routes extends React.Component {
                         <Route path="/product/new" exact component={ProductCreate}/>
                         <Route path="/product/edit/:id" exact component={ProductCreate}/>
                         <Route path="/store/:id" exact component={Store}/>
-                        <Route path="/product/:id" exact component={Product}/>
+                        <Route path="/catalog/item/:id" exact component={CatalogEdit}/>
                         <Route path="/catalog/:id" exact component={Catalog}/>
+                        <Route path="/cart/:id" exact component={CatalogCart}/>
                     </Switch>
                 </div>
             </Router>

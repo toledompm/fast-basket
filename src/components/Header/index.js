@@ -13,9 +13,9 @@ const Header = () => {
 
             <div className="right menu">
                 <div className="item">
-                    <button className="ui button positive">
-                        Ajuda
-                    </button>
+                    <Link to="/login" className="ui button positive">
+                        <h5>Entrar</h5>
+                    </Link>
                 </div>
             </div>
         </div>
