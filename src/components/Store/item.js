@@ -9,7 +9,7 @@ export class StoreItem extends Component {
         }
         const {name, phone, lengthOfCatalogs} = this.props.item;
         return (
-            <div class="item" onClick={() => history.push(`/store/${this.props.item.id}`)}>
+            <div className="item" onClick={() => history.push(`/store/${this.props.item.id}`)}>
                 <div className="right floated content">
                     <Link to="/store/edit/1" className="ui small button primary">
                         <i className=" edit icon"></i>
@@ -18,15 +18,15 @@ export class StoreItem extends Component {
                 </div>
                 <div className="right floated content">
                     <Link to="/products" className="ui small button secondary">
-                        <i className=" cart icon"></i>
+                        <i className="cart icon"></i>
                         Produtos
                     </Link>
                 </div>
-                <div class="content">
-                    <h3 class="header">{name}</h3>
-                    <p class="price">{lengthOfCatalogs + ' '}
+                <div className="content">
+                    <h3 className="header">{name}</h3>
+                    <p className="price">{lengthOfCatalogs + ' '}
                         produtos</p>
-                    <h5 class="description">
+                    <h5 className="description">
                         Telefone para contato {phone}
                     </h5>
                 </div>

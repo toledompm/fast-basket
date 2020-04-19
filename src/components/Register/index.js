@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import history from '../../history';
+import './style.css'
 
 class Register extends Component {
     state = {
@@ -15,23 +16,40 @@ class Register extends Component {
 
     render() {
         return (
-            <div className="ui container">
-                <h3>Cadastre seu negócio</h3>
-                <p>Procurando organização? Fast Basket
-                    <br/>
-                    Cadastre e ganhe 1 mês de benefícios!
-                </p>
-                <input type="text" placeholder="Usuário"/>
-                <input type="text" placeholder="Senha"/>
-                <input type="text" placeholder="Whatsapp (com DDD)"/>
-                <button className="green" onClick={this.handleRegister}>Próximo</button>
-                <h4>
-                    Já possui cadastro?
-                    <Link to="/login">
-                        <span></span>
-                        Entrar
-                    </Link>
-                </h4>
+            <div className="register-container">
+                <div className="content">
+                    <section>
+                        <h1>Cadastre seu negócio</h1>
+                        <p>Procurando organização? Fast Basket
+                            <br/>
+                            Cadastre e ganhe 1 mês de benefícios!
+                        </p>
+
+                    </section>
+                    <div className="entry">
+                        <form onSubmit={this.handleRegister}>
+                            <label className="pure-material-textfield-outlined">
+                                <input placeholder=" "/>
+                                <span>Usuário</span>
+                            </label>
+                            <label className="pure-material-textfield-outlined">
+                                <input placeholder=" "/>
+                                <span>WhatsApp (com DDD)</span>
+                            </label>
+                            <label className="pure-material-textfield-outlined">
+                                <input placeholder=" " type="password"/>
+                                <span>Senha</span>
+                            </label>
+                            <button className="green" onClick={this.handleRegister}>Próximo</button>
+                        </form>
+                        <h4>
+                            Já tem conta na FastBasket? 
+                            <Link to="/login">
+                                <span>Entre</span>
+                            </Link>
+                        </h4>
+                    </div>
+                </div>
             </div>
         )
     }
