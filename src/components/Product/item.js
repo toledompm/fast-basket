@@ -26,7 +26,7 @@ export class ProductItem extends Component {
                     </Link>
                 </div>
                 <div className="right floated content">
-                    <Link to="/product/edit" className="ui small button primary">
+                    <Link to="/product/edit/1" className="ui small button primary">
                         <i className=" edit icon"></i>
                         Alterar
                     </Link>

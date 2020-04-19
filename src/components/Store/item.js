@@ -11,13 +11,7 @@ export class StoreItem extends Component {
         return (
             <div class="item" onClick={() => history.push(`/store/${this.props.item.id}`)}>
                 <div className="right floated content">
-                    <Link to="/" className="ui small button negative">
-                        <i className=" trash icon"></i>
-                        Excluir
-                    </Link>
-                </div>
-                <div className="right floated content">
-                    <Link to="/store/edit" className="ui small button primary">
+                    <Link to="/store/edit/1" className="ui small button primary">
                         <i className=" edit icon"></i>
                         Alterar
                     </Link>

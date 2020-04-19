@@ -29,7 +29,8 @@ class Store extends Component {
                     <div className="eight wide column">
                         <Link to='/product/new'>
                             <button className="green"><i className="whatsapp icon"/>
-                                Enviar para WhatsApp</button>
+                                Compartilhar
+                            </button>
                         </Link>
                     </div>
                 </div>

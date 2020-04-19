@@ -55,7 +55,7 @@ button:hover {
     filter: brightness(95%);
 }
 
-input {
+input, textarea {
     background: #FEFEFE;
     border: 1px solid #757171;
     box-sizing: border-box;
