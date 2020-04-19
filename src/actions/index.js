@@ -8,12 +8,32 @@ import {
     CREATE_PRODUCT,
     EDIT_PRODUCT,
     FETCH_PRODUCT,
-    FETCH_PRODUCTS
+    FETCH_PRODUCTS,
+    SMS_SEND,
+    SMS_VALIDATE
 } from './types';
 
 import api from '../api/api';
 
 import history from '../history';
+
+export const smsSend = ({username, password, whatsapp}) => async dispatch => {
+    const response = await api.post('/sms', {username, password, phone: whatsapp});
+    dispatch({
+        type: SMS_SEND,
+        payload: {
+            ...response.data,
+            username,
+            whatsapp
+        }
+    })
+    history.push('/auth');
+};
+
+export const smsValidate = validationNumber => async dispatch => {
+    const response = await api.post('/validateSMS', {validationNumber});
+    dispatch({type: SMS_VALIDATE, payload: response.data})
+};
 
 export const signIn = formValues => async(dispatch) => {
 
@@ -46,7 +66,11 @@ export const fetchStores = () => async(dispatch, getState) => {
     const {userId} = getState().auth;
     const response = await api.get('/store', {userId});
 
-    dispatch({type: FETCH_STORES, payload: response?.data ?? []});
+    dispatch({
+        type: FETCH_STORES,
+        payload: response
+            ?.data ?? []
+    });
 };
 
 export const fetchStore = id => async dispatch => {

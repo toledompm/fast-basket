@@ -1,16 +1,36 @@
-import { SIGN_IN, SIGN_OUT } from '../actions/types';
+import {SIGN_IN, SIGN_OUT, SMS_SEND, SMS_VALIDATE} from '../actions/types';
 
 const INITIAL_STATE = {
     isSignedIn: null,
-    userId: null
+    token: null,
+    validate: false,
+    username: null
 };
 
-export default (state = INITIAL_STATE, action) => {
+export default(state = INITIAL_STATE, action) => {
     switch (action.type) {
         case SIGN_IN:
-            return { ...state, isSignedIn: true, userId: action.payload };
+            return {
+                ...state,
+                isSignedIn: true,
+                userId: action.payload
+            };
         case SIGN_OUT:
-            return { ...state, isSignedIn: false, userId: null };
+            return {
+                ...state,
+                isSignedIn: false,
+                userId: null
+            };
+        case SMS_SEND:
+            return {
+                ...state,
+                message: action.payload
+            }
+        case SMS_VALIDATE:
+            return {
+                ...state,
+                validate: action.payload
+            }
         default:
             return state;
     }

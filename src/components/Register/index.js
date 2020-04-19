@@ -1,18 +1,23 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import history from '../../history';
 import './style.css'
 import RegisterForm from '../Form/RegisterForm';
+import {connect} from 'react-redux';
+import {smsSend} from '../../actions/index'
 
 class Register extends Component {
-    state = {
-        username: null,
-        password: null,
-        whatsapp: null
-    };
 
-    handleRegister = () => {
-        history.push('/auth', this.state);
+    handleRegister = (formValues) => {
+        if (formValues) {
+            const {
+                username,
+                password,
+                whatsapp = '+55' + formValues.whatsapp
+            } = formValues;
+            this
+                .props
+                .smsSend({username, whatsapp, password});
+        }
     }
 
     render() {
@@ -28,21 +33,7 @@ class Register extends Component {
 
                     </section>
                     <div className="entry">
-                        <RegisterForm onSubmit={this.handleRegister}/> {/* <form onSubmit={this.handleRegister}>
-                            <label className="pure-material-textfield-outlined">
-                                <input placeholder=" "/>
-                                <span>Usuário</span>
-                            </label>
-                            <label className="pure-material-textfield-outlined">
-                                <input placeholder=" "/>
-                                <span>WhatsApp (com DDD)</span>
-                            </label>
-                            <label className="pure-material-textfield-outlined">
-                                <input placeholder=" " type="password"/>
-                                <span>Senha</span>
-                            </label>
-                            <button className="green" onClick={this.handleRegister}>Próximo</button>
-                        </form> */}
+                        <RegisterForm onSubmit={this.handleRegister}/>
                         <h4>
                             Já tem conta na FastBasket?
                             <Link to="/login">
@@ -56,4 +47,4 @@ class Register extends Component {
     }
 }
 
-export default Register;
+export default connect(null, {smsSend})(Register);

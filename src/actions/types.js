@@ -8,3 +8,5 @@ export const CREATE_PRODUCT = 'CREATE_PRODUCT';
 export const EDIT_PRODUCT = 'EDIT_PRODUCT';
 export const FETCH_PRODUCT = 'FETCH_PRODUCT';
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
+export const SMS_SEND = 'SMS_SEND';
+export const SMS_VALIDATE = 'SMS_VALIDATE';
