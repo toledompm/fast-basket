@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import Button from '../Button';
-import logo from '../../assets/logo.svg';
 
 class Login extends Component {
     render() {
         return (
             <div className="ui container">
-                <img src={logo} className="ui small image centered aligned" alt="Fast Basket"/>
                 <h3>Portal do Parceiro</h3>
                 <p>Atualize seu catálogo de jeito rápido e fácil</p>
                 <input type="text" placeholder="Usuário"/>
@@ -15,7 +12,7 @@ class Login extends Component {
                 <Link to="/reset-password">
                     Esqueci meu e-mail ou senha
                 </Link>
-                <Button className="green">Entrar</Button>
+                <button className="green">Entrar</button>
                 <h4>
                     Ainda não possui cadastro?
                     <Link to="/register">

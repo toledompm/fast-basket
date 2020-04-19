@@ -1,16 +1,22 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import StoreItem from './item';
 
 class StoreList extends Component {
+
+    renderList() {
+        return this
+            .props
+            .stores
+            .map(item => <StoreItem key={item.id} item={item}/>);
+    }
+
     render() {
-        return (
-            <div></div>
-        )
+        console.log(this.props.stores)
+        if (!this.props.stores) {
+            return null;
+        }
+
+        return <div className="ui raised segments">{this.renderList()}</div>
     }
 }
-
-const mapStateToProps = (state) => {}
-
-const mapDispatchToProps = {}
-
-export default connect(mapStateToProps, mapDispatchToProps)(StoreList)
+export default StoreList;

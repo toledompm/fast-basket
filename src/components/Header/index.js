@@ -4,13 +4,15 @@ import logo from '../../assets/logo.svg';
 
 const Header = () => {
     return (
-        <div className="ui large menu green">
+        <div className="ui small menu green">
             <Link className="item" to="/">
                 <img src={logo} alt="Fast Basket"/>
             </Link>
-            <div class="right menu">
-                <div class="item">
-                    <button className="ui small button positive">Cadastrar-se</button>
+            <div className="right menu">
+                <div className="item">
+                    <button className="ui icon button">
+                        <i className="help icon"></i>
+                    </button>
                 </div>
             </div>
         </div>

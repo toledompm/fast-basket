@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import logo from '../../assets/logo.svg';
-import Button from '../Button';
+import history from '../../history';
 
 class Register extends Component {
+    state = {
+        username: null,
+        password: null,
+        whatsapp: null
+    };
+
+    handleRegister = () => {
+        history.push('/auth', this.state);
+    }
+
     render() {
         return (
             <div className="ui container">
-                <img src={logo} className="ui tiny image centered aligned" alt="Fast Basket"/>
                 <h3>Cadastre seu negócio</h3>
                 <p>Procurando organização? Fast Basket
                     <br/>
@@ -16,7 +24,7 @@ class Register extends Component {
                 <input type="text" placeholder="Usuário"/>
                 <input type="text" placeholder="Senha"/>
                 <input type="text" placeholder="Whatsapp (com DDD)"/>
-                <Button className="green">Próximo</Button>
+                <button className="green" onClick={this.handleRegister}>Próximo</button>
                 <h4>
                     Já possui cadastro?
                     <Link to="/login">
