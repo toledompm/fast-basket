@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import history from '../../history';
 
 export class Auth extends Component {
     handleLogin() {
-        console.log('login')
+        history.push('/dashboard', this.state);
     }
 
     onInputChange(target) {
@@ -39,7 +40,7 @@ export class Auth extends Component {
                     .
                 </p>
                 <div className="ui grid center aligned">
-                    <div className="two wide column">
+                    <div className="four wide column">
                         <input
                             type="number"
                             style={{
@@ -51,7 +52,7 @@ export class Auth extends Component {
                             max="9"
                             maxLength="1"/>
                     </div>
-                    <div className="two wide column">
+                    <div className="four wide column">
                         <input
                             type="number"
                             style={{
@@ -63,7 +64,7 @@ export class Auth extends Component {
                             max="9"
                             maxLength="1"/>
                     </div>
-                    <div className="two wide column">
+                    <div className="four wide column">
                         <input
                             type="number"
                             style={{
@@ -75,7 +76,7 @@ export class Auth extends Component {
                             max="9"
                             maxLength="1"/>
                     </div>
-                    <div className="two wide column">
+                    <div className="four wide column">
                         <input
                             type="number"
                             style={{
@@ -91,17 +92,17 @@ export class Auth extends Component {
                 <div className="ui centered aligned">
                     <br/>
                     <h5>Não recebeu seu código ?
-                        <a>
+                        <a href="/auth">
                             Reenviar</a>
                     </h5>
 
                     <br/>
                 </div>
-                <button className="green">Enviar</button>
+
                 <div className="centered aligned">
                     <br/>
                     <h5>Errou seu número ?
-                        <a>
+                        <a onClick={() => history.goBack()}>
                             Voltar</a>
                     </h5>
                     <br/>

@@ -12,7 +12,9 @@ class Login extends Component {
                 <Link to="/reset-password">
                     Esqueci meu e-mail ou senha
                 </Link>
-                <button className="green">Entrar</button>
+                <Link to="/dashboard">
+                    <button className="green">Entrar</button>
+                </Link>
                 <h4>
                     Ainda não possui cadastro?
                     <Link to="/register">

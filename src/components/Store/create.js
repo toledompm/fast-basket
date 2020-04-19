@@ -1,10 +1,18 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 class StoreCreate extends Component {
     render() {
         return (
-            <div></div>
+            <div className="ui container">
+                <h1>Cadastro de Loja</h1>
+                <input type="text" placeholder="Nome"/>
+                <input type="text" placeholder="WhatsApp"/>
+                <Link to="/dashboard">
+                    <button className="green">Salvar</button>
+                </Link>
+            </div>
         )
     }
 }

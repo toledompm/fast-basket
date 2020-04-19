@@ -1,16 +1,21 @@
 import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import ProductItem from './item';
 
 class ProductList extends Component {
+
+    renderList() {
+        return this
+            .props
+            .products
+            .map(item => <ProductItem key={item.id} item={item}/>);
+    }
+
     render() {
-        return (
-            <div></div>
-        )
+        if (!this.props.products) {
+            return null;
+        }
+
+        return <div className="ui middle aligned divided list">{this.renderList()}</div>
     }
 }
-
-const mapStateToProps = (state) => {}
-
-const mapDispatchToProps = {}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductList)
+export default ProductList;
