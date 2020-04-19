@@ -65,6 +65,7 @@ input, textarea {
     height: 50px;
     width: 100%;
     text-indent: 10px;
+    resize: none;
 }
 
 input + input {
