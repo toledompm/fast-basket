@@ -15,7 +15,7 @@ class Dashboard extends Component {
         return (
             <div className="ui container ">
                 <div className="centered aligned">
-                    <p>Cadastre seus produtos online e compartilhe sua lojas nas redes sociais</p>
+                    <p>Cadastre seus produtos online e compartilhe seus catálogos nas redes sociais</p>
                 </div>
                 <StoreList stores={testData}/>
                 <Link to='/store/new'>

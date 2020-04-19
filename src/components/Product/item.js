@@ -17,7 +17,7 @@ export class ProductItem extends Component {
             .format(price);
         return (
             <div
-                class="item"
+                className="item"
                 onClick={() => history.push(`/product/${this.props.item.id}`)}>
                 <div className="right floated content">
                     <Link to="/" className="ui small button negative">
@@ -31,10 +31,10 @@ export class ProductItem extends Component {
                         Alterar
                     </Link>
                 </div>
-                <div class="left floated content">
-                    <h3 class="header">{name}</h3>
-                    <p class="price">{formatedPrice}</p>
-                    <h5 class="description">
+                <div className="left floated content">
+                    <h3 className="header">{name}</h3>
+                    <p className="price">{formatedPrice}</p>
+                    <h5 className="description">
                         {description}
                     </h5>
                 </div>

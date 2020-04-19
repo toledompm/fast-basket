@@ -1,0 +1,46 @@
+.authentication-container {
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+    
+}
+
+.authentication-container .content{
+    width: 100%;
+    padding: 12px;
+    background: #f0f0f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    margin-bottom: 40px;
+}
+
+.authorization-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.four-digits {
+    display: flex;
+    flex-direction: row;
+}
+
+.four-digits input{
+    width: 52px;
+    text-align: center;
+}
+
+.counter + .counter{
+    margin-left: 16px;
+}
