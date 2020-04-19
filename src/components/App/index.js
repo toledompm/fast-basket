@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import logo from '../../assets/logo.svg';
-import Button from '../Button';
 
 class App extends Component {
     render() {
@@ -15,10 +14,10 @@ class App extends Component {
                     <h1>Crie agora mesmo seu catálogo virtual!</h1>
                     <p>Cadastre seu catálogo online e compartilhe nas redes sociais</p>
                     <Link to="/register">
-                        <Button className="green">Cadastre-se</Button>
+                        <button className="green">Cadastre-se</button>
                     </Link>
                     <Link to="/login">
-                        <Button className="low-green">Já tem uma conta? Faça login</Button>
+                        <button className="low-green">Já tem uma conta? Faça login</button>
                     </Link>
                 </div>
             </div>

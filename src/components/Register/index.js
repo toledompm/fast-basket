@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../../assets/logo.svg';
-import Button from '../Button';
 
 class Register extends Component {
     render() {
@@ -16,7 +15,7 @@ class Register extends Component {
                 <input type="text" placeholder="Usuário"/>
                 <input type="text" placeholder="Senha"/>
                 <input type="text" placeholder="Whatsapp (com DDD)"/>
-                <Button className="green">Próximo</Button>
+                <button className="green">Próximo</button>
                 <h4>
                     Já possui cadastro?
                     <Link to="/login">
