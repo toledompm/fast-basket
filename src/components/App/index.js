@@ -7,7 +7,6 @@ class App extends Component {
         return (
             <div className="ui center aligned container">
                 <div className="header">
-                    <h3>Fast Basket</h3>
                     <img src={logo} className="ui small image centered aligned" alt="Fast Basket"/>
                 </div>
                 <div className="description">
