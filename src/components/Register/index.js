@@ -1,18 +1,23 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import history from '../../history';
 import './style.css'
 import RegisterForm from '../Form/RegisterForm';
+import {connect} from 'react-redux';
+import {smsSend} from '../../actions/index'
 
 class Register extends Component {
-    state = {
-        username: null,
-        password: null,
-        whatsapp: null
-    };
 
-    handleRegister = () => {
-        history.push('/auth', this.state);
+    handleRegister = (formValues) => {
+        if (formValues) {
+            const {
+                username,
+                password,
+                whatsapp = '+55' + formValues.whatsapp
+            } = formValues;
+            this
+                .props
+                .smsSend({username, whatsapp, password});
+        }
     }
 
     render() {
@@ -42,4 +47,4 @@ class Register extends Component {
     }
 }
 
-export default Register;
+export default connect(null, {smsSend})(Register);

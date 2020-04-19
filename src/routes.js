@@ -16,7 +16,7 @@ import Catalog from './components/Catalog';
 
 import history from './history';
 import Help from './components/Help';
-import {Auth} from './components/Auth';
+import Auth from './components/Auth';
 
 class Routes extends React.Component {
     state = {

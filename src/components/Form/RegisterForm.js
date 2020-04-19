@@ -12,20 +12,22 @@ class RegisterForm extends Component {
         }
     }
 
-    renderInput = ({input, label, meta}) => {
+    renderInput = ({input, type, label, meta}) => {
         const className = `pure-material-textfield-outlined ${meta.error && meta.touched
             ? 'error'
             : ''}`;
         return (
             <label className={className}>
-                <input {...input} placeholder=" " autoComplete="off"/>
+                <input {...input} type={type} placeholder=" " autoComplete="off"/>
                 <span>{label}</span>{this.renderError(meta)}
             </label>
         );
     }
 
     onSubmit = formValues => {
-        this.props.onSubmit(formValues);
+        this
+            .props
+            .onSubmit(formValues);
     }
 
     render() {
@@ -35,12 +37,12 @@ class RegisterForm extends Component {
                 .props
                 .handleSubmit(this.onSubmit)}>
                 <Field name="username" component={this.renderInput} label="Usuário"/>
-                <Field name="password" component={this.renderInput} label="Senha"/>
                 <Field
-                    name="whatsapp"
+                    name="password"
                     type="password"
                     component={this.renderInput}
-                    label="WhatsApp (com DDD)"/>
+                    label="Senha"/>
+                <Field name="whatsapp" component={this.renderInput} label="WhatsApp (com DDD)"/>
                 <button className="green">Próximo</button>
             </form>
         );
