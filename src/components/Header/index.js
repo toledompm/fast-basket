@@ -7,13 +7,14 @@ const Header = () => {
     return (
         <div className="ui small menu green">
             <Link className="item" to="/">
+                <label className="title">FastBasket</label>
                 <img src={logo} alt="FastBasket"/>
             </Link>
-            <label className="title">FastBasket</label>
+
             <div className="right menu">
                 <div className="item">
-                    <button className="ui icon button">
-                        <i className="help icon"></i>
+                    <button className="ui button positive">
+                        Ajuda
                     </button>
                 </div>
             </div>

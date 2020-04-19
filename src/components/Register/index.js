@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import history from '../../history';
 import './style.css'
+import RegisterForm from '../Form/RegisterForm';
 
 class Register extends Component {
     state = {
@@ -27,7 +28,7 @@ class Register extends Component {
 
                     </section>
                     <div className="entry">
-                        <form onSubmit={this.handleRegister}>
+                        <RegisterForm onSubmit={this.handleRegister}/> {/* <form onSubmit={this.handleRegister}>
                             <label className="pure-material-textfield-outlined">
                                 <input placeholder=" "/>
                                 <span>Usuário</span>
@@ -41,9 +42,9 @@ class Register extends Component {
                                 <span>Senha</span>
                             </label>
                             <button className="green" onClick={this.handleRegister}>Próximo</button>
-                        </form>
+                        </form> */}
                         <h4>
-                            Já tem conta na FastBasket? 
+                            Já tem conta na FastBasket?
                             <Link to="/login">
                                 <span>Entre</span>
                             </Link>
