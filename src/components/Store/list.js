@@ -16,7 +16,7 @@ class StoreList extends Component {
             return null;
         }
 
-        return <div className="ui raised segments">{this.renderList()}</div>
+        return <div className="ui middle aligned divided list">{this.renderList()}</div>
     }
 }
 export default StoreList;

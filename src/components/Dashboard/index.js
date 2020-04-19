@@ -18,8 +18,8 @@ class Dashboard extends Component {
                     <p>Cadastre seus produtos online e compartilhe sua lojas nas redes sociais</p>
                 </div>
                 <StoreList stores={testData}/>
-                <Link to='/store/create'>
-                    <button className="green"><i className="add icon"/>
+                <Link to='/store/new'>
+                    <button className="green"><i className="add icon"/> Nova Loja
                     </button>
                 </Link>
             </div>
