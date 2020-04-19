@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import StoreList from '../Store/list'
+import {connect} from 'react-redux';
+import {fetchStores} from '../../actions/index';
 
-export class Dashboard extends Component {
+class Dashboard extends Component {
+    componentDidMount() {
+        this.props.fetchStores();
+    }
+
     render() {
-        return (
-            <div>
-                User
-            </div>
-        )
+        return (<StoreList/>)
     }
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+    return {stores: state.stores}
+};
+
+export default connect(mapStateToProps, {fetchStores})(Dashboard);

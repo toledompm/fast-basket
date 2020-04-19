@@ -11,15 +11,22 @@ import {
     FETCH_PRODUCTS
 } from './types';
 
-import api from '../api';
+import api from '../api/api';
 
 import history from '../history';
 
-export const signIn = userId => {
-    return {type: SIGN_IN, payload: userId};
+export const signIn = formValues => async(dispatch) => {
+
+    const response = await api.post('/auth', {
+        ...formValues
+    });
+
+    dispatch({type: SIGN_IN, payload: response.data});
+    history.push('/dashboard');
 };
 
 export const signOut = () => {
+    history.push('/');
     return {type: SIGN_OUT};
 };
 
@@ -35,10 +42,11 @@ export const createStore = formValues => async(dispatch, getState) => {
     history.push('/dashboard');
 };
 
-export const fetchStores = () => async dispatch => {
-    const response = await api.get('/store');
+export const fetchStores = () => async(dispatch, getState) => {
+    const {userId} = getState().auth;
+    const response = await api.get('/store', {userId});
 
-    dispatch({type: FETCH_STORES, payload: response.data});
+    dispatch({type: FETCH_STORES, payload: response?.data ?? []});
 };
 
 export const fetchStore = id => async dispatch => {

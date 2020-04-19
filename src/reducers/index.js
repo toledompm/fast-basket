@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 // import { reducer as formReducer } from 'redux-form';
 import authReducer from './authReducer';
-import businessReducer from './storeReducer';
+import storeReducers from './storeReducer';
 
-export default combineReducers({auth: authReducer, business: businessReducer});
+export default combineReducers({auth: authReducer, stores: storeReducers});
