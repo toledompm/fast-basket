@@ -1,2 +1,10 @@
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
+export const CREATE_STORE = 'CREATE_STORE';
+export const EDIT_STORE = 'EDIT_STORE';
+export const FETCH_STORE = 'FETCH_STORE';
+export const FETCH_STORES = 'FETCH_STORES';
+export const CREATE_PRODUCT = 'CREATE_PRODUCT';
+export const EDIT_PRODUCT = 'EDIT_PRODUCT';
+export const FETCH_PRODUCT = 'FETCH_PRODUCT';
+export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
