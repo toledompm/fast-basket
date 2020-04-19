@@ -28,21 +28,7 @@ class Register extends Component {
 
                     </section>
                     <div className="entry">
-                        <RegisterForm onSubmit={this.handleRegister}/> {/* <form onSubmit={this.handleRegister}>
-                            <label className="pure-material-textfield-outlined">
-                                <input placeholder=" "/>
-                                <span>Usuário</span>
-                            </label>
-                            <label className="pure-material-textfield-outlined">
-                                <input placeholder=" "/>
-                                <span>WhatsApp (com DDD)</span>
-                            </label>
-                            <label className="pure-material-textfield-outlined">
-                                <input placeholder=" " type="password"/>
-                                <span>Senha</span>
-                            </label>
-                            <button className="green" onClick={this.handleRegister}>Próximo</button>
-                        </form> */}
+                        <RegisterForm onSubmit={this.handleRegister}/>
                         <h4>
                             Já tem conta na FastBasket?
                             <Link to="/login">
