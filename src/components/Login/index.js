@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import Button from '../Button';
 import logo from '../../assets/logo.svg';
 
 class Login extends Component {
@@ -15,7 +14,7 @@ class Login extends Component {
                 <Link to="/reset-password">
                     Esqueci meu e-mail ou senha
                 </Link>
-                <Button className="green">Entrar</Button>
+                <button className="green">Entrar</button>
                 <h4>
                     Ainda não possui cadastro?
                     <Link to="/register">
