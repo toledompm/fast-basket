@@ -1,25 +1,25 @@
 import _ from 'lodash';
 
-import {FETCH_STORE, FETCH_STORES, CREATE_STORE, EDIT_STORE} from '../actions/types';
+import {FETCH_PRODUCT, FETCH_PRODUCTS, CREATE_PRODUCT, EDIT_PRODUCT} from '../actions/types';
 
 export default(state = {}, action) => {
     switch (action.type) {
-        case FETCH_STORE:
+        case FETCH_PRODUCT:
             return {
                 ...state,
                 ..._.mapKeys(action.payload, 'id')
             }
-        case FETCH_STORES:
+        case FETCH_PRODUCTS:
             return {
                 ...state,
                 [action.payload.id]: action.payload
             }
-        case CREATE_STORE:
+        case CREATE_PRODUCT:
             return {
                 ...state,
                 [action.payload.id]: action.payload
             }
-        case EDIT_STORE:
+        case EDIT_PRODUCT:
             return {
                 ...state,
                 [action.payload.id]: action.payload
@@ -28,22 +28,3 @@ export default(state = {}, action) => {
             return state;
     }
 };
-
-export const testData = [
-    {
-        id: 1,
-        name: 'Loja 1',
-        lengthOfCatalogs: 12,
-        phone: '12982428442'
-    }, {
-        id: 2,
-        name: 'Loja 2',
-        lengthOfCatalogs: 12,
-        phone: '12982428442'
-    }, {
-        id: 3,
-        name: 'Loja 3',
-        lengthOfCatalogs: 12,
-        phone: '12982428442'
-    }
-];

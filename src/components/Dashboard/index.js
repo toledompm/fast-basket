@@ -2,19 +2,30 @@ import React, {Component} from 'react';
 import StoreList from '../Store/list'
 import {connect} from 'react-redux';
 import {fetchStores} from '../../actions/index';
-
+import {testData} from '../../reducers/storeReducer';
 class Dashboard extends Component {
     componentDidMount() {
-        this.props.fetchStores();
+        this
+            .props
+            .fetchStores();
     }
 
     render() {
-        return (<StoreList/>)
+        return (
+            <div className="ui container ">
+                <div className="centered aligned">
+                    <p>Cadastre seus produtos online e compartilhe sua lojas nas redes sociais</p>
+                </div>
+                <StoreList stores={testData}/>
+            </div>
+        )
     }
 }
 
 const mapStateToProps = state => {
-    return {stores: state.stores}
+    return {
+        stores: Object.keys(state.stores)
+    }
 };
 
 export default connect(mapStateToProps, {fetchStores})(Dashboard);
